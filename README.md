@@ -1,6 +1,8 @@
 # Web Test Protocol
 > Just a simple testing protocol that I used for a presentation.
 
+<img src="./web-test-protocol.png" width="250" />
+
 Testing is a necessity. We test by writing functions that evaluate our
 application, and either fail or succeed. We group these functions together, and
 we execute them serially or in parallel, exporting these results in different
