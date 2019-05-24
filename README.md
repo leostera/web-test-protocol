@@ -11,6 +11,8 @@ formats.
 This small document defines some common vocabulary for describing tests, and
 a set of steps to execute them.
 
+## Vocabulary
+
 A _test result_ is a value that indicates whether the test was successfull or
 if it failed. If it failed, an error message should be provided for clarity.
 
