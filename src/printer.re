@@ -1,14 +1,10 @@
-open Web_test.Test;
-
-let print_results: Web_test.Suite.results => unit =
-  suite => {
-    print_string("# " ++ suite.description ++ "\n");
-    suite.results
-    |> List.map(({test, status}) =>
+let print_results: list(Web_test.Test.test_result) => unit =
+  results => {
+    results
+    |> List.map(status =>
          switch (status) {
-         | Web_test.Test.Successful => test.name ++ " OK\n"
-         | Web_test.Test.Failed(error) =>
-           test.name ++ " failed with \"" ++ error ++ "\"\n"
+         | Web_test.Test.Success => "OK\n"
+         | Web_test.Test.Failure(error) => "Failed with \"" ++ error ++ "\"\n"
          }
        )
     |> List.iter(print_string);

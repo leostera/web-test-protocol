@@ -5,14 +5,15 @@ describe(
   [
     it("true is true", () =>
       switch (true === true) {
-      | true => Web_test.Test.Successful
-      | _ => Web_test.Test.Failed("true wasn't true")
+      | true => Web_test.Test.Success
+      | _ => Web_test.Test.Failure("true wasn't true")
       }
     ),
     it("false is not true", () =>
+      /** this will obviously fail! */
       switch (false === false) {
-      | true => Web_test.Test.Failed("Holy moly, we're in trouble!")
-      | _ => Web_test.Test.Successful
+      | true => Web_test.Test.Failure("Holy moly, we're in trouble!")
+      | _ => Web_test.Test.Success
       }
     ),
   ],
